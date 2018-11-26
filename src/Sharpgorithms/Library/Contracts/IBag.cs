@@ -2,7 +2,7 @@
 
 namespace Library
 {
-    public interface IBag<T> : IEnumerable<T>
+    public interface IBag<T> : IEnumerable<T>, ICountableCollection
     {
         void Add(T value);
 
