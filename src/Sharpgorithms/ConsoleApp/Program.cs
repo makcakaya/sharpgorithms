@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace ConsoleApp
+﻿namespace ConsoleApp
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        // This program is included to enable experimenting with ease.
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
