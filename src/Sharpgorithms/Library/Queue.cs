@@ -40,6 +40,11 @@ namespace Library
             return value;
         }
 
+        public T Peek()
+        {
+            return _first != null ? _first.Value : default(T);
+        }
+
         private sealed class QueueNode<TValue>
         {
             public TValue Value { get; set; }

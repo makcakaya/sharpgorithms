@@ -74,5 +74,41 @@ namespace Tests
 
             Assert.False(queue.IsEmpty);
         }
+
+        [Fact]
+        public void Peek_Returns_Default_If_Empty()
+        {
+            var queue = new Queue<int>();
+            Assert.Equal(default(int), queue.Peek());
+        }
+
+        [Fact]
+        public void Peek_Returns_First_Item()
+        {
+            var queue = new Queue<int>();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+
+            Assert.Equal(1, queue.Peek());
+        }
+
+        [Fact]
+        public void Peek_Does_Not_Remove_Item()
+        {
+            var queue = new Queue<int>();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+
+            var peekValue = queue.Peek();
+
+            Assert.Equal(3, queue.Count);
+
+            var value = queue.Dequeue();
+
+            Assert.Equal(1, peekValue);
+            Assert.Equal(peekValue, value);
+        }
     }
 }
